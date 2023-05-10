@@ -16,13 +16,12 @@ $(document).ready(function() {
     
     
     setInterval(function() {
-        $.getJSON(url1, function(data){
-            var time = "";
-            for(var i = 11; i < 19;i++){
-                time += data.datetime[i]; 
-            }
-            $("#time").text(time);
-        })
+        var date = new Date();
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var seconds = date.getSeconds();
+        var time = hours + ":" + minutes + ":" + seconds;
+        $("#time").html(time);
     }, 1000);
 
    
